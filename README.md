@@ -1,6 +1,8 @@
 # M426_AP18c_NoNameEntered
 D&amp;D internet platform
 
+Trello board: https://trello.com/b/DPyUhpS0/m426
+
 ### ToDo functions:
 gamemaster as gm
 player wich playing now as player1 
