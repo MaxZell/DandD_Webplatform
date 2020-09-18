@@ -1,0 +1,36 @@
+body{
+	background-color: black !important;
+	margin: 0 auto !important;
+	width: 99% !important;
+	font-size: 20px !important;
+
+}
+h1, h3, h4, h2, p{
+	color: #dcdde1 !important;
+}
+
+label{
+	color: #dcdde1 !important;
+}
+#Rand{
+  border-radius: 35px;
+  background: #0C2D73;
+  padding: 20px; 
+  width: 100%;
+  height: auto;   
+}
+.btn{
+	background: #12AB0A !important;
+	font-size: 30px !important;
+	color: white !important;
+}
+
+.Element_Registrierung, .Element_Anmeldung{
+  border-radius: 35px;
+  background: #0C2D73;
+  padding: 20px; 
+  width: 30% !important;
+  text-align: left;
+  height: auto; 
+
+}
