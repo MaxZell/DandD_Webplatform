@@ -1,6 +1,11 @@
 # M426_AP18c_NoNameEntered
 D&amp;D internet platform
 
+
+=======
+Trello board: https://trello.com/b/DPyUhpS0/m426
+
+
 ### ToDo functions:
 gamemaster as gm
 player wich playing now as player1 
@@ -19,4 +24,8 @@ player wich don't playing now as player2
 * move option(different game cubes)
 
 ### ToThink:
+
 maybe we can use [React](https://reactjs.org/)(JavaScript Framework), it's make a big part of developing
+=======
+maybe we can use [React](https://reactjs.org/)(JavaScript Framework), it's make a big part of developing
+
