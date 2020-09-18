@@ -11,11 +11,11 @@
   <ul>
     <li><a href="index.html">to index page, whatever that is</a></li>
 	<li><a href="">new game</a></li>
-	<li><a href="">map editor</a></li>
+	<li><a href="MapEditor.php">map editor</a></li>
 	<li><a href="">load game</a></li>
 	<li><a href="">known items</a></li>
 	<li><a href="">character generator</a></li>
-	<li><a href="">help</a></li>
+	<li><a href="HelpMenu.php">help</a></li>
   </ul>
 ﻿</body>
 ﻿</html>﻿
