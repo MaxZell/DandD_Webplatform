@@ -8,8 +8,6 @@ include ("checkuser.php");
 <body>
   BenutzerId: <?php echo $_SESSION["user_id"]; ?><br>
   Nickname: <?php echo $_SESSION["user_nickname"]; ?><br>
-  Nachname: <?php //echo user_surname ; ?><br>
-  Vorname: <?php //echo $_SESSION["user_prename"]; ?>
   <hr>
 
   

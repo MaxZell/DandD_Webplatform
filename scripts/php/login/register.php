@@ -12,8 +12,6 @@ if (!mysqli_select_db ($con,"nne_dd"))
 
 $nickname = mysqli_real_escape_string($con, $_POST['nickname']);
 $password = mysqli_real_escape_string($con, $_POST['password']);
-$lastname = mysqli_real_escape_string($con, $_POST['lastname']);
-$firstname = mysqli_real_escape_string($con, $_POST['firstname']);
 
 $sql = "SELECT * FROM tbl_users WHERE (user_name = '$nickname')";
 $result = mysqli_query($con, $sql);
@@ -28,18 +26,11 @@ if(mysqli_num_rows ($result) == 0){
 		$error = 1;
 	}
 
-	if($firstname == ""){
-		$error = 1;
-	}
-
-	if($lastname == ""){
-		$error = 1;
-	}
-
 	if($error != 0){
 		header ("Location: register_form.php?error=1");
 	}else{
 		$hashPassword = password_hash($password, PASSWORD_DEFAULT);
+		error_log($hashPassword);//DELETE FROM tbl_users WHERE user_name='admin';
 		$sql = "INSERT INTO tbl_users (user_name, user_password) VALUES ('$nickname', '$hashPassword');";
 		$result = mysqli_query($con, $sql);
 		$sql = "SELECT * FROM tbl_users WHERE (user_name = '$nickname')";

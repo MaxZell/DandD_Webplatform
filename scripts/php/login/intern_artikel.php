@@ -6,23 +6,11 @@
       <title>Interne Seite</title> 
     </head> 
     <body> 
-      BenutzerId: <?php echo $_SESSION["user_id"]; ?><br> 
-      Nickname: <?php //echo $_SESSION["user_nickname"]; ?><br> 
-      Nachname: <?php echo $_SESSION["user_nickname"]; ?><br> 
-      Vorname: <?php //echo $_SESSION["user_prename"]; ?> 
+      BenutzerId: <?php echo $_SESSION["user_id"]; ?><br>
+      Nickname: <?php echo $_SESSION["user_nickname"]; ?><br>
       <hr> 
-      <a href="logout.php">Ausloggen</a> <br>
-<?php
-// Systemeinstellungen
-// 06.06.2013 some changes we should not use register globals on
-// 11.09.2013 error_reporting = E_ALL, show all errors,warnings and notices including coding standards
-// 22.02.2017 mysql durch mysqli ersetzt
-// 17.02.2018 HTML mit echo an Präsentation Layer schicken 
-// 17.02.2018 SQL -Statement anpassen  
-// 17.02.2018 Variable $script eingeführt  
-// 07.05.2020 HTML-Grundgerüst ergänzt, HTML-Struktur überarbeitet, einige Logik-error korrigiert, SQL-Injection verhindert, formwerte escaped
-?>
-<!doctype html>
+      <a href="logout.php">log out</a> <br>
+<!Doctype html>
 <html>
 <head>
 	<title>Artikelliste</title>

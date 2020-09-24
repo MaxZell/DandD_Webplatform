@@ -19,8 +19,6 @@ if (isset ($_REQUEST["registration"]))
 <form action="register.php" method="post">
     <div>Nickname:</div><input type="text" name="nickname" size="20"><br>
     <div>Password:</div><input type="password" name="password" size="20"><br>
-    <div>Lastname:</div><input type="text" name="lastname" size="20"><br>
-    <div>Firstname:</div><input type="text" name="firstname" size="20"><br>
 	<br>
     <input type="submit" value="Register">
 </form>
