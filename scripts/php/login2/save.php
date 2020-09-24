@@ -27,7 +27,7 @@ $sqlResultatSpeichern = "INSERT INTO resultate (X, Y, Person_ID_FK)
         	echo '<!doctype html>
 	        <head>
 	        <title>
-	        Abspeicherungsfehler</title>
+	        Abspeicherungserror</title>
 
 	        </head>
 	        <body>

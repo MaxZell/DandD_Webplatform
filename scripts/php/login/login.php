@@ -1,57 +1,43 @@
-<title>FRAGEN</title>
-<head>
-<title>Startseite</title>
 <?php
-	//importiert Bootstrap 4.5.0 und unsere CSS Datei.
-	include "style.html";
-	?>
-</head>
-<?php
-//Hasht Eingabe und entfernt gefährlichen Code.
-$benutzername = strip_tags($_POST["bname"]);
-$passwort = hash('sha512', strip_tags($_POST["psswd"]));
+// Session start
+session_start ();
 
-session_start();
+// Establish database connection
+$id = "root";
+$pw = "";
+$host = "localhost";
+$database = "nne_dd";
+$table = "tbl_users";
+$meldung = "";
+
+$con = mysqli_connect ($host, $id, $pw) or die ("cannot connect");
+mysqli_select_db($con, $database) or die ("cannot select DB");
+
+$sql = "SELECT ".
+    "user_ID, user_name".
+  "FROM ".
+    "tbl_users ".
+  "WHERE ".
+    "(user_name like '".$_REQUEST["name"]."') AND ".
+    "(user_password = '".password_hash($_REQUEST["pwd"], PASSWORD_DEFAULT)."')";
+$result = mysqli_query ($con,$sql);
 
 
-//Verbindung zur Datenbank wird aufgenommen.
-include "DBConnector.php";
+if (mysqli_num_rows ($result) > 0)
+{
+  // Reading user data into an array.
+  $data = mysqli_fetch_array ($result,MYSQLI_ASSOC);
 
+  // Create and register session variables. Check DB structure($data).
+  $_SESSION["user_id"] = $data["user_ID"];
+  $_SESSION["user_nickname"] = $data["user_name"];
+  // $_SESSION["user_surname"] = $data["Nachname"];
+  // $_SESSION["user_prename"] = $data["Vorname"];
 
-//Holt Daten nur, wenn das gehashte Passwort, mit dem auf der Datenbank übereinstimmt und der Benutzername existiert.
-$Kontodaten_DB = "SELECT Konto_ID, Benutzername, Passwort FROM kontodaten WHERE Benutzername='$benutzername' AND Passwort='$passwort'";
-		$Kontodaten_DB_gefetched = $conn->query($Kontodaten_DB);
-
-	while($row = $Kontodaten_DB_gefetched->fetch_assoc()) {
-		$Konto_ID = $row["Konto_ID"];
-	}
-
-//Wenn die geholten der Datenbank nicht vorhanden sind, 
-//wird der Benutzer ins Home zurück geschickt.
-if (mysqli_num_rows($Kontodaten_DB_gefetched)==0) { 
-
-	$_SESSION["Anmeldungsstatus"] = "PASSWORT_FALSCH";
-	header("Location: ../../../index.php");
-  	exit();
-}else{
-	$_SESSION["Anmeldungsstatus"] = "JA";
-	$_SESSION["Konto_ID"] = $Konto_ID;
-
-	if($_SESSION["Resultat_Gespeichert"] == "JA"){
-	echo '
-	<h1>Sie haben den Test bereits gemacht.</h1>
-
-	<form action="signout.php" method="POST" >
-	<input type="submit" value="Abmelden" class="btn btn-primary mb-2">
-	</form>
-	';
-	}
-
-	// Wenn ich mal hier weiter arbeiten will, kann ich hier das Resultat anzeigen lassen.
-	else{
-
-	include "menu.php";
-	}
+  header ("Location: intern.php");
 }
-
-?>
+else
+{
+  header ("Location: form.php?error=1");
+}
+?> 
