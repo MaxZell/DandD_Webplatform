@@ -31,7 +31,7 @@ $Kontodaten_DB = "SELECT Konto_ID, Benutzername, Passwort FROM kontodaten WHERE 
 if (mysqli_num_rows($Kontodaten_DB_gefetched)==0) { 
 
 	$_SESSION["Anmeldungsstatus"] = "PASSWORT_FALSCH";
-	header("Location: ../home.php");
+	header("Location: ../../../index.php");
   	exit();
 }else{
 	$_SESSION["Anmeldungsstatus"] = "JA";

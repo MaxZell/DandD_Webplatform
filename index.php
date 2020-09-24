@@ -1,17 +1,3 @@
-</!DOCTYPE html>
-<html>
-<head>
-	<title>Startseite</title>
-	<?php
-	//importiert Bootstrap 4.5.0 und unsere CSS Datei.
-	include "style.html";
-	?>
-</head>
-<body>
-	<center>
-<h2>Melden Sie sich an, oder Registrieren Sie sich!</h2>
-
-
 <?php
 session_start();
 //Überprüft ob der Benutzer bereits existiert.
@@ -30,6 +16,19 @@ session_start();
 		session_destroy();
 	}
 	?>
+</!DOCTYPE html>
+<html>
+<head>
+	<title>Startseite</title>
+	<?php
+	//importiert Bootstrap 4.5.0 und unsere CSS Datei.
+	include "scripts/php/login/style.html";
+	?>
+</head>
+<body>
+	<center>
+<h2>Melden Sie sich an, oder Registrieren Sie sich!</h2>
+
 <div class="Element_Registrierung"> 
 <form action="scripts/php/login/register.php" method="POST" class="w-100">
   <label for="Benutzername">Username:</label><br>
@@ -54,7 +53,7 @@ session_start();
 
 	?> 
 	<div class="Element_Anmeldung">
-<form action="Anmeldung/login.php" method="POST">
+<form action="scripts/php/login/login.php" method="POST">
   <label for="bname">Benutzername:</label><br>
   <input type="text" id="bname" name="bname" value="" class="form-control" required autofocus="true"><br>
   <label for="psswd">Passwort:</label><br>
@@ -62,11 +61,10 @@ session_start();
   <input type="submit" value="Einloggen" width="50px" id="einloggen" class="btn w-100 mb-2">
 </form> 
 </div>
-
+</center>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-</center>
 </body>
 </html>

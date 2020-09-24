@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href=" ../style.css">
+<link rel="stylesheet" type="text/css" href=" ../../../styles/style.css">
 <?php
 session_start();
 
@@ -16,7 +16,7 @@ include "DBConnector.php";
 //Überprüft ob die Eingabe leer ist. Wenn ja wird der Benutzer zurück geschickt.
 if (empty($_POST["new_bname"]) || empty($_POST["new_psswd"]) || empty($_POST["nname"]) || empty($_POST["vname"])) {
 	$_SESSION["Registrationsstatus"] = "LEER";
-    header("Location: ../home.php");
+    header("Location: ../../../index.php");
     exit();
 }
 
@@ -48,7 +48,7 @@ if (mysqli_num_rows($Kontodaten_DB_gefetched) == 0) {
            
         if ($conn->query($sqlNeuePerson) === TRUE) {
             $_SESSION["Registrationsstatus"] = "BENUTZER_WURDE_ERSTELLT";
-            header("Location: ../home.php");
+            header("Location: ../../../index.php");
         }
     } else {
         echo "Benutzer konnte aus irgend einem Grund nicht erstellt werden.";
@@ -56,7 +56,7 @@ if (mysqli_num_rows($Kontodaten_DB_gefetched) == 0) {
 } else {
     
     $_SESSION["Registrationsstatus"] = "BENUTZER_EXISTIERT_BEREITS";
-    header("Location: ../home.php");
+    header("Location: ../../../index.php");
 }
 
 ?>
