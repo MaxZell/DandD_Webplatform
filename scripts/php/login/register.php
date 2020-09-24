@@ -39,7 +39,7 @@ if(mysqli_num_rows ($result) == 0){
 	if($error != 0){
 		header ("Location: register_form.php?error=1");
 	}else{
-		$hashPassword = md5($password);
+		$hashPassword = password_hash($password, PASSWORD_DEFAULT);
 		$sql = "INSERT INTO tbl_users (user_name, user_password) VALUES ('$nickname', '$hashPassword');";
 		$result = mysqli_query($con, $sql);
 		$sql = "SELECT * FROM tbl_users WHERE (user_name = '$nickname')";
