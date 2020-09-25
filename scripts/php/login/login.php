@@ -20,7 +20,7 @@ $hash = $result->fetch_assoc();
 
 if ($result->num_rows > 0) {
   if(password_verify($_REQUEST["pwd"], $hash['user_password'])){
-    echo("OK");
+    echo("OK");//add main menu
   }else{
     echo("wrong password");
   }
