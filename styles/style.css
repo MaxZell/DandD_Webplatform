@@ -1,4 +1,4 @@
-﻿body {
+﻿#loginBody {
     background-image: url("https://media.giphy.com/media/l0HlTy9x8FZo0XO1i/giphy.gif");
     background-color: black;
     height: 500px;
@@ -6,29 +6,59 @@
 }
 
 #form{
-    text-align: center;
+    /* text-align: center; */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
     font-size: 20px;
+    width: 400px;
 }
 
-#form > input, button{
+#inp{
+    width: 100%;
+}
+
+#form > div > input{
+    /* margin: 10px; */
     height: 30px;
-}
-
-#form > input{
-    margin: 10px;
-    width: 300px;
+    min-width: 300px;
 }
 
 #form > button{
     margin: 5px;
-    width: 500px;
+    height: 40px;
+    width: 100%;
     background-color: teal;
     color: wheat;
     border: none;
     font-size: 20px;
 }
+
+#form > div > #name, #pwd{
+    background-color: rgb(41, 41, 41);
+    color: blanchedalmond;
+    font-size: 20px;
+    border: none;
+}
+
+#form > div > input{
+    float: right;
+}
+
+#form > div > #name:focus, #pwd:focus{
+    outline: none;
+    border: 2px solid red;
+}
+
+#form > #nameB:hover{
+    background-color: rgb(1, 83, 83);
+    cursor: pointer;
+}
+
+#form > #pwdB:hover{
+    background-color: rgb(185, 2, 2);
+    cursor: pointer;
+}
+
