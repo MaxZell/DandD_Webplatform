@@ -1,4 +1,10 @@
-﻿#loginBody {
+﻿body{
+    background-color: #0e1116;
+    color: blanchedalmond;
+    font-size: 20px;
+}
+
+#loginBody {
     background-image: url("https://media.giphy.com/media/l0HlTy9x8FZo0XO1i/giphy.gif");
     background-color: black;
     height: 500px;
@@ -6,7 +12,7 @@
 }
 
 #loginCotainer{
-    /* text-align: center; */
+    text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -41,13 +47,19 @@
     height: 40px;
     width: 100%;
     background-color: teal;
-    color: wheat;
+    /* color: wheat; */
+    color: blanchedalmond;
     border: none;
     font-size: 20px;
 }
 
+#form > div > input:-webkit-autofill {
+    -webkit-text-fill-color: blanchedalmond;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 #form > div > #name, #pwd{
-    background-color: rgb(41, 41, 41);
+    background-color: #292929;
     color: blanchedalmond;
     font-size: 20px;
     border: none;
@@ -59,16 +71,38 @@
 
 #form > div > #name:focus, #pwd:focus{
     outline: none;
-    border: 2px solid red;
+    border: 2px solid #adb2a4;
 }
 
 #form > #nameB:hover{
-    background-color: rgb(1, 83, 83);
+    background-color: #015151;
     cursor: pointer;
 }
 
 #form > #pwdB:hover{
-    background-color: rgb(185, 2, 2);
+    background-color: red;
     cursor: pointer;
 }
 
+#mainMenu > div > a{
+    display: block;
+    text-align: center;
+    text-decoration: none; 
+    color: black;
+    background-color: #ffa217;
+    padding: 5px;
+    font-size: 20px;
+    width: 400px;
+}
+
+#mainMenu > div{
+    margin: 15px;
+}
+
+#logout > a{
+    text-decoration: none; 
+    padding: 5px;
+    color: black;
+    background-color: #ffa217;
+    font-size: 20px;
+}

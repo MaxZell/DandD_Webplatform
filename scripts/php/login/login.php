@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
   if(password_verify($_REQUEST["pwd"], $resultFetched['user_password'])){
     $_SESSION["user_id"] = $resultFetched["user_ID"];
 		$_SESSION["user_nickname"] = $resultFetched["user_name"];
-    header ("Location: ./../../../MainMenu.php");
+    header ("Location: ./../MainMenu.php");
   }else{
     echo("wrong password");
   }

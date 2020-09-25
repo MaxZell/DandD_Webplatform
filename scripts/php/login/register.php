@@ -48,7 +48,7 @@ if(mysqli_num_rows ($result) == 0){
 		// user_surname  = $data["Nachname"];
 		// $_SESSION["user_prename"] = $data["Vorname"];
 
-		header ("Location: ./../../../MainMenu.php");
+		header ("Location: ./../MainMenu.php");
 		}
 	}
 
