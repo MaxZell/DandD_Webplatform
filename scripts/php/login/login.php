@@ -14,13 +14,15 @@ $conn = new mysqli($host, $user, $pw, $database);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$sql = "SELECT user_password FROM tbl_users WHERE user_name = '". $_REQUEST["name"] ."';";
+$sql = "SELECT * FROM tbl_users WHERE user_name = '". $_REQUEST["name"] ."';";
 $result = $conn->query($sql);
-$hash = $result->fetch_assoc();
+$resultFetched = $result->fetch_assoc();
 
 if ($result->num_rows > 0) {
-  if(password_verify($_REQUEST["pwd"], $hash['user_password'])){
-    echo("OK");//add main menu
+  if(password_verify($_REQUEST["pwd"], $resultFetched['user_password'])){
+    $_SESSION["user_id"] = $resultFetched["user_ID"];
+		$_SESSION["user_nickname"] = $resultFetched["user_name"];
+    header ("Location: intern.php");
   }else{
     echo("wrong password");
   }
