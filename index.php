@@ -13,7 +13,7 @@ if (isset ($_REQUEST["error"]))
   echo "The access data are not valid." . "<br><br>";
 }
 ?>
-<div id="loginCotainer">
+<div id="loginCotainer"><!--https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/history/deleteAll-->
   <label id="title">Dungeons and Dragons</label>
   <form id="form" action="./scripts/php/login/login.php" method="post">
     <div id="inp"><span for="name">Name:</span> <input id="name" type="text" name="name"></div><br>
