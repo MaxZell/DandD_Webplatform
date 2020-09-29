@@ -1,4 +1,8 @@
-﻿body{
+﻿/*
+change px to em ???
+*/
+
+body{
     background-color: #0e1116;
     color: blanchedalmond;
     font-size: 20px;
@@ -81,6 +85,17 @@
     cursor: pointer;
 }
 
+#form > #pwdB{
+    margin: 5px;
+    height: 40px;
+    width: 100%;
+    background-color: teal;
+    /* color: wheat; */
+    color: blanchedalmond;
+    border: none;
+    font-size: 20px;
+}
+
 #form > #pwdB:hover{
     background-color: red;
     cursor: pointer;
@@ -141,4 +156,11 @@ div > #logout > a{
     position: absolute;
     right: 100px;
     bottom: 50px;   
+}
+
+#registerBody {
+    background-image: url("https://media.giphy.com/media/JoV6rEAzVhWwjx2yCL/giphy.gif");
+    background-color: black;
+    background-size: 450px;
+    background-position: center;
 }
