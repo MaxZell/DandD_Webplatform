@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Login</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./../../../d&d_logo_32x32.png" />
 </head>
 
 <body>
