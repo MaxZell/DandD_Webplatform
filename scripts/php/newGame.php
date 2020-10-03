@@ -1,8 +1,4 @@
 <?php session_start (); ?>
-<?php
-include "sessionCheck.php";
-include "DbConnector.php";
-?>
 <html>
 <head>
   <title>New Game</title>
