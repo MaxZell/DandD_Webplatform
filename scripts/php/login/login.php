@@ -1,42 +1,41 @@
 <?php
 // Session start
 session_start();
+require_once('./../dbConnector.php');
+$dbConnector = new dbConnector();
+$pdo = $dbConnector->getPdo();
 
-// Establish database connection
-$user = "root";
-$pw = "";
-$host = "localhost";
-$database = "nne_dd";
-$table = "tbl_users";
-$meldung = "";
+$select = "select * from tbl_users where user_name = :UserName";
+// $select = "SELECT * FROM tbl_users WHERE user_name = '" . $_REQUEST["name"] . "'";
 
-$conn = new mysqli($host, $user, $pw, $database);
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-$sql = "SELECT * FROM tbl_users WHERE user_name = '". $_REQUEST["name"] ."';";
-$result = $conn->query($sql);
-$resultFetched = $result->fetch_assoc();
+$stmt = $pdo->prepare($select);
+$stmt->bindValue(":UserName", $_REQUEST["name"], PDO::PARAM_STR);
+$result = $stmt->execute();
+// $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
+$resultFetched = $stmt->fetch();
 
-if ($result->num_rows > 0) {
+// $sql = "SELECT * FROM tbl_users WHERE user_name = '". $_REQUEST["name"] ."';";
+// $result = $conn->query($sql);
+// $resultFetched = $result->fetch_assoc();
+// echo "Result: " . $result . "<br>";
+// echo "Fetched: " . $resultFetched . "<br>";
+
+//$result->num_rows > 0
+if ($result) {
   if(password_verify($_REQUEST["pwd"], $resultFetched['user_password'])){
     $_SESSION["user_id"] = $resultFetched["user_ID"];
     $_SESSION["user_nickname"] = $resultFetched["user_name"];
     // user should not come back to login form and well after forward from login to interface 
     // https://stackoverflow.com/questions/15655017/window-location-js-vs-header-php-for-redirection
     header ("Location: ./../MainMenu.php");
-    // exit; 
-    ?>
-    <!--<meta http-equiv="refresh" content="0;url=./../MainMenu.php"/>-->
-    <!-- <script>window.location="./../MainMenu.php";</script> -->
-    <!-- <script>window.location.replace("./../MainMenu.php") alert("ok");</script> -->
-    <?php
   }else{
-    echo("wrong password");
+    // echo("wrong password");
+    echo "<script>alert('wrong password'); window.history.back();</script>";
   }
 }else {
-  trigger_error('Invalid query: ' . $conn->error);
-  echo "0 results";
+  // trigger_error('Invalid query: ' . $conn->error);
+  // echo "0 results";
+  echo "<script>alert('0 results'); window.history.back();</script>";
 }
-$conn->close();
+// $conn->close();
 ?> 
