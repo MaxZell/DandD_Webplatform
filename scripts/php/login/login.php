@@ -1,26 +1,16 @@
 <?php
-// Session start
 session_start();
 require_once('./../dbConnector.php');
 $dbConnector = new dbConnector();
 $pdo = $dbConnector->getPdo();
 
 $select = "select * from tbl_users where user_name = :UserName";
-// $select = "SELECT * FROM tbl_users WHERE user_name = '" . $_REQUEST["name"] . "'";
 
 $stmt = $pdo->prepare($select);
 $stmt->bindValue(":UserName", $_REQUEST["name"], PDO::PARAM_STR);
 $result = $stmt->execute();
-// $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
 $resultFetched = $stmt->fetch();
 
-// $sql = "SELECT * FROM tbl_users WHERE user_name = '". $_REQUEST["name"] ."';";
-// $result = $conn->query($sql);
-// $resultFetched = $result->fetch_assoc();
-// echo "Result: " . $result . "<br>";
-// echo "Fetched: " . $resultFetched . "<br>";
-
-//$result->num_rows > 0
 if ($result) {
   if(password_verify($_REQUEST["pwd"], $resultFetched['user_password'])){
     $_SESSION["user_id"] = $resultFetched["user_ID"];

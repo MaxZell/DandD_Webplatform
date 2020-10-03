@@ -1,7 +1,6 @@
 <?php
 session_start ();
 
-// error_log("let`s start register");
 require_once('./../dbConnector.php');
 $dbConnector = new dbConnector();
 $pdo = $dbConnector->getPdo();
@@ -15,20 +14,6 @@ $stmt->bindValue(":UserName", $nickname, PDO::PARAM_STR);
 $result = $stmt->execute();
 $resultFetched = $stmt->fetch();
 
-// Datenbankverbindung aufbauen
-/*
-	$con = mysqli_connect ("localhost", "root", "");
-	if (!mysqli_select_db ($con,"nne_dd"))
-	{
-	die ("No connection to database");
-	}
-
-	$nickname = mysqli_real_escape_string($con, $_POST['nickname']);
-	$password = mysqli_real_escape_string($con, $_POST['password']);
-
-	$sql = "SELECT * FROM tbl_users WHERE (user_name = '$nickname')";
-	$result = mysqli_query($con, $sql);
-*/
 if($result){
 	$error = 0;
 
@@ -44,15 +29,8 @@ if($result){
 		header ("Location: register_form.php?error=1");
 	}else{
 		$hashPassword = password_hash($password, PASSWORD_DEFAULT);
-		// error_log($hashPassword);//DELETE FROM tbl_users WHERE user_name='admin';
-		/*
-			$sql = "INSERT INTO tbl_users (user_name, user_password) VALUES ('$nickname', '$hashPassword');";
-			$result = mysqli_query($con, $sql);
-			$sql = "SELECT * FROM tbl_users WHERE (user_name = '$nickname')";
-			$result = mysqli_query ($con,$sql);
-		*/
+		
 		$select = "insert into tbl_users(user_name, user_password) values('$nickname', '$hashPassword')";
-		// $select = "INSERT INTO tbl_users (user_name, user_password) VALUES ('$nickname', '$hashPassword')";
 		$stmt = $pdo->prepare($select);
 		$result = $stmt->execute();
 		$resultFetched = $stmt->fetch();
@@ -65,13 +43,9 @@ if($result){
 		if ($result){
 			$_SESSION["user_id"] = $resultFetched["user_ID"];
 			$_SESSION["user_nickname"] = $resultFetched["user_name"];
-
 			header ("Location: ./../MainMenu.php");
-		}else{
-			echo mysqli_error($result);
 		}
 	}
-
 }else{
 	 header ("Location: register_form.php?registration=1");
 }  	
