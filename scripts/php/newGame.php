@@ -9,7 +9,7 @@
   <body id="newGameBody">
     <div id="container">
       <p id="title">Create New Game</p>
-      <form id="form" action="../new_map.php" method="post">
+      <form id="form" action="../php/backend/new_map.php" method="post">
         <p>Game name</p>
         <input id="name" type="text" name="name"><br>
         <p>Game map</p>
