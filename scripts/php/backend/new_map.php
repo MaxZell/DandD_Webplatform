@@ -1,7 +1,7 @@
 <?php
 echo "New Game creating...0";
 
-$target_dir = "maps/";
+$target_dir = "/maps";
 $target_file = $target_dir . basename($_FILES["map"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
