@@ -9,7 +9,7 @@
   <body id="newGameBody">
     <div id="container">
       <p id="title">Create New Game</p>
-      <form id="form" action="../php/backend/new_map.php" method="post">
+      <form id="form" action="../php/backend/new_map.php" method="post" enctype="multipart/form-data">
         <p>Game name</p>
         <input id="name" type="text" name="name"><br>
         <p>Game map</p>
@@ -18,9 +18,13 @@
         <canvas id="mapPreview" height="300" width="auto" on></canvas><br>
         <input id="submitNewGame" type="submit" value="Create Game">
       </form>
+
+
+
     </div>
     <div id="mapOverlay" style="display:none"></div>
     <script>
+    /*
       canvas.addEventListener('click', function showOverlay(){
         /*
         https://stackoverflow.com/questions/10906734/how-to-upload-image-into-html5-canvas
@@ -35,7 +39,7 @@
         https://stackoverflow.com/questions/10257781/can-i-get-image-from-canvas-element-and-use-it-in-img-src-tag
         */
       });
-
+      /*
       var imageLoader = document.getElementById('map');
       imageLoader.addEventListener('change', handleImage, false);
       var canvas = document.getElementById('mapPreview');
@@ -57,6 +61,7 @@
       }
       reader.readAsDataURL(e.target.files[0]);     
       }
+      */
     </script>
   </body>
 </html> 
