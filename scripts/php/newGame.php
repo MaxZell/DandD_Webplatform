@@ -12,7 +12,7 @@
       
       <form id="form" action="../php/backend/new_map.php" method="post" enctype="multipart/form-data">
         <p>Game name</p>
-        <input id="name" type="text" name="name"><br>
+        <!---<input id="name" type="text" name="name">----><br>
         <p>Game map</p>
         <input id="fileToUpload" type="file" name="fileToUpload"><br>
         <p>Map Preview</p>
