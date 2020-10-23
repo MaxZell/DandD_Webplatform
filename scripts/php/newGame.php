@@ -9,11 +9,12 @@
   <body id="newGameBody">
     <div id="container">
       <p id="title">Create New Game</p>
+      
       <form id="form" action="../php/backend/new_map.php" method="post" enctype="multipart/form-data">
         <p>Game name</p>
         <input id="name" type="text" name="name"><br>
         <p>Game map</p>
-        <input id="map" type="file" name="map"><br>
+        <input id="fileToUpload" type="file" name="fileToUpload"><br>
         <p>Map Preview</p>
         <canvas id="mapPreview" height="300" width="auto" on></canvas><br>
         <input id="submitNewGame" type="submit" value="Create Game">
