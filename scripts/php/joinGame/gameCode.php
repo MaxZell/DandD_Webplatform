@@ -8,6 +8,7 @@
 </head>
     <body id="gameCodeBody">
         <div id="container">
+            //stikers: https://giphy.com/search/Destiny-stickers
             <p id="title">Enter Game Code!</p>
             <form action="backend/....">
                 <input type="text">
