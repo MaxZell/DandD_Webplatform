@@ -9,17 +9,7 @@
     <body id="joinGameBody">
         <div id="container">
         <p id="title">Join Your Game Lord!</p>
-        <button id="listB">Active Games</button><br>
-        <button id="codeB">Game Code</button>
-    <script>
-        let listB = document.getElementById('listB');
-        listB.addEventListener('click', function() {
-            document.location.href = 'joinGame/activeGames.php';
-        });
-        let codeB = document.getElementById('codeB');
-        codeB.addEventListener('click', function() {
-            document.location.href = 'joinGame/gameCode.php';
-        });
-    </script>
+        <div><a href="joinGame/activeGames.php">Active Games</a></div>
+        <div><a href="joinGame/gameCode.php">Game Code</a></div>
     </body>
 </html> 
