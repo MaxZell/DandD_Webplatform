@@ -16,7 +16,7 @@
     <label>Main Menu</label>
     <div><a href="./newGame.php">new game</a></div>
     <div><a href="./joinGame.php">join game</a></div>
-    <div><a href="./mapEditor.php">map editor</a></div>
+    <!-- <div><a href="./mapEditor.php">map editor</a></div> -->
     <div><a href="./gameCharacters.php">character generator</a></div>
     <div><a href="./gameItems.php">known items</a></div>
     <div><a href="./help.php">help</a></div>
