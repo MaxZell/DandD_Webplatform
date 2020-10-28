@@ -211,3 +211,29 @@ div > #logout > a{
     border: none;
     font-size: 20px; 
 }
+
+#joinGameBody > #container > div > a{
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    text-decoration: none; 
+    color: black;
+    background-color: #d68100;
+    padding: 5px;
+    font-size: 30px;
+    width: 200px;
+    transition-duration: 2s;
+}
+
+#joinGameBody > #container > div{
+    margin: 15px;
+    
+}
+#joinGameBody > #container > div > a:hover{
+    background-color: #d62b00;
+}
+#joinGameBody > #bMagicGif{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
