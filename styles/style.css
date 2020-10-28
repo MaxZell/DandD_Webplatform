@@ -172,3 +172,42 @@ div > #logout > a{
     background-size: 450px;
     background-position: center;
 }
+
+#submitNewGame{
+    margin: 5px;
+    height: 40px;
+    width: 100%;
+    background-color: #ffa217;
+    /* color: wheat; */
+    color: blanchedalmond;
+    border: none;
+    font-size: 20px;   
+    color: black;
+    font-family: 'Grenze Gotisch';
+}
+#newGameBody > container > form > table{
+    text-align: center;
+}
+#newGameBody > container > form > table > tr, th{
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+}
+#newGameBody > container > form > table > tr > th > input{
+    height: 30px;
+    min-width: 300px;
+    background-color: #ffa217;
+}
+#newGameBody > container > form > table > tr > th > input:-webkit-autofill {
+    -webkit-text-fill-color: blanchedalmond;
+    transition: background-color 5000s ease-in-out 0s;
+}
+#fileLoadBtn{
+    margin: 5px;
+    height: 40px;
+    width: 50%;
+    background-color: #00801c;
+    color: blanchedalmond;
+    border: none;
+    font-size: 20px; 
+}
