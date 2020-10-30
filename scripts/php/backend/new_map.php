@@ -5,7 +5,7 @@ $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 $GameName =  $_POST['name'];
 
-echo "This is the game name: " . $GameName . "<br>";
+echo "This is the game name: " . $GameName;
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submitNewGame"])) {
@@ -37,11 +37,6 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
   echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
   $uploadOk = 0;
 }
-
-/*
-  !!!ToDo:
-  change map name to "gameName_username_id(hash).png"
-*/
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
