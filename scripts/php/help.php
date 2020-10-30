@@ -11,5 +11,5 @@
     Since the goal of the project wasn't finishing the project, but how to get there, it might not be finished.
     </p>
   <h2>Rules</h2>
-  <!--TODO: link PDF here-->
+  <a href="../../rules/DnD_BasicRules_2018.pdf">Rules of D&D</a>
 </body>
